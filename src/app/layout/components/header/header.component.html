@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="mat-elevation-z4">
+  <div>
+    Treinamento Redux
+  </div>
+  <div>
+    Vendedor
+    <mat-slide-toggle class="slide-toggle-margin" color="warn">
+    </mat-slide-toggle>
+    Comprador
+  </div>
+  <div>
+    <button
+      mat-raised-button
+      matBadge="8"
+      color="primary"
+      matBadgePosition="before"
+      matBadgeColor="accent"
+      [matMenuTriggerFor]="beforeMenu"
+    >
+      <span class="material-icons">
+        shopping_cart
+      </span>
+    </button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Item 1 eita poxa</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+  </div>
+</mat-toolbar>

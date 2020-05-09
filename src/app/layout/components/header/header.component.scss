@@ -1,0 +1,27 @@
+mat-toolbar {
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 500;
+  height: 65px;
+  color: white;
+  text-decoration: none;
+  padding-left: 36px;
+  padding-right: 50px;
+}
+
+::ng-deep {
+  .mat-slide-toggle.mat-warn.mat-checked .mat-ripple-element {
+    background-color: #000;
+  }
+  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    background-color: #000;
+  }
+  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #fff;
+  }
+}
