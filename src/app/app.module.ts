@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material.module';
 import { AdminModule } from './admin/admin.module';
 import { LayoutModule } from './layout/layout.module';
 
@@ -14,8 +13,8 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
 import { environment } from 'src/environments/environment';
-import { ProdutoEffects } from './admin/effects';
 import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './material';
 
 @NgModule({
   declarations: [AppComponent],

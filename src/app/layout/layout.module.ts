@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { LayoutComponent } from './layout.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MaterialModule } from '../material.module';
-import { ContentComponent } from './components/content/content.component';
+import {
+  HeaderComponent,
+  SidebarComponent,
+  ContentComponent,
+} from './components';
+import { MaterialModule } from '../material';
 
 @NgModule({
   declarations: [
