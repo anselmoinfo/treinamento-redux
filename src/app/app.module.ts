@@ -10,16 +10,18 @@ import { LayoutModule } from './layout/layout.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
 import { environment } from 'src/environments/environment';
 import { ProdutoEffects } from './admin/effects';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
@@ -28,8 +30,8 @@ import { ProdutoEffects } from './admin/effects';
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {
-        strictStateSerializability: true,
-        strictActionSerializability: true,
+        // strictStateSerializability: true,
+        // strictActionSerializability: true,
         strictActionWithinNgZone: true,
       },
     }),
@@ -38,7 +40,7 @@ import { ProdutoEffects } from './admin/effects';
       name: 'Treinamento Redux',
       logOnly: environment.production,
     }),
-    EffectsModule.forRoot([ProdutoEffects]),
+    EffectsModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

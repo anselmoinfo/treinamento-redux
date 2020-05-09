@@ -4,9 +4,18 @@ import { VitrineComponent } from './modules/vitrine/vitrine.component';
 import { CarrinhoDeComprasComponent } from './modules/carrinho-de-compras/carrinho-de-compras.component';
 import { HomeComponent } from './modules/home/home.component';
 import { MaterialModule } from '../material.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { ProdutoEffects } from './effects';
+import * as fromAdmin from './reducers';
 
 @NgModule({
   declarations: [HomeComponent, VitrineComponent, CarrinhoDeComprasComponent],
-  imports: [CommonModule, MaterialModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    StoreModule.forFeature(fromAdmin.adminFeatureKey, fromAdmin.reducers),
+    EffectsModule.forFeature([ProdutoEffects]),
+  ],
 })
 export class AdminModule {}

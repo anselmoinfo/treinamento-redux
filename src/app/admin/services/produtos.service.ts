@@ -9,44 +9,42 @@ import { Produto } from '../models';
   providedIn: 'root',
 })
 export class ProdutosService {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   listaProdutos(): Observable<Produto[]> {
-    return this.httpClient
-      .get<Produto[]>(`${environment.APIUrl}/produtos`)
-      .pipe(
-        catchError((e) => {
-          throw new Error(e.error.message);
-        })
-      );
+    return this.http.get<Produto[]>(`${environment.APIUrl}/produtos`).pipe(
+      catchError((e) => {
+        throw new Error(e.message);
+      })
+    );
   }
 
   cadastraProduto(produto: Produto): Observable<Produto> {
-    return this.httpClient
+    return this.http
       .post<Produto>(`${environment.APIUrl}/produtos`, produto)
       .pipe(
         catchError((e) => {
-          throw new Error(e.error.message);
+          throw new Error(e.message);
         })
       );
   }
 
   editaProduto(produto: Produto): Observable<Produto> {
-    return this.httpClient
+    return this.http
       .put<Produto>(`${environment.APIUrl}/produtos`, produto)
       .pipe(
         catchError((e) => {
-          throw new Error(e.error.message);
+          throw new Error(e.message);
         })
       );
   }
 
   deletaProduto(id: number): Observable<{}> {
-    return this.httpClient
+    return this.http
       .delete<Produto>(`${environment.APIUrl}/produtos/${id}`)
       .pipe(
         catchError((e) => {
-          throw new Error(e.error.message);
+          throw new Error(e.message);
         })
       );
   }

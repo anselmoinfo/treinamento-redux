@@ -7,7 +7,7 @@ import { ProdutosService } from '../services/produtos.service';
 
 @Injectable()
 export class ProdutoEffects {
-  login$ = createEffect(() =>
+  listar$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProdutosActions.listar),
       exhaustMap(() =>
@@ -23,7 +23,7 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.listarFailure),
-        tap((error) => alert(error))
+        tap((error) => alert(error.error))
       ),
     { dispatch: false }
   );
