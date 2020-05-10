@@ -76,3 +76,10 @@ export const carrinhoEstaVazio = createSelector(
     return carrinho.itens.length === 0;
   }
 );
+
+export const selectDescontoCalculado = createSelector(
+  selectCarrinhoDeCompras,
+  (carrinho) => {
+    return carrinho.desconto;
+  }
+);

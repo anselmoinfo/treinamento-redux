@@ -13,6 +13,7 @@ import { CarrinhoDeComprasActions } from '../actions';
 import { CarrinhoDeComprasService } from '../services';
 import * as fromAdmin from '../reducers';
 import { Store, select } from '@ngrx/store';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class CarrinhoDeComprasEffects {
@@ -33,11 +34,28 @@ export class CarrinhoDeComprasEffects {
     )
   );
 
+  concluirCompraSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(CarrinhoDeComprasActions.concluirCompraSuccess),
+        tap(() =>
+          this.snackBar.open('Compra Concluída com Sucesso!', 'OK', {
+            duration: 3000,
+          })
+        )
+      ),
+    { dispatch: false }
+  );
+
   concluirCompraFailure$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(CarrinhoDeComprasActions.concluirCompraFailure),
-        tap((error) => alert(error.error))
+        tap((error) =>
+          this.snackBar.open(error.error, 'OK', {
+            duration: 3000,
+          })
+        )
       ),
     { dispatch: false }
   );
@@ -45,6 +63,7 @@ export class CarrinhoDeComprasEffects {
   constructor(
     private actions$: Actions,
     private carrinhoDeComprasService: CarrinhoDeComprasService,
-    private store: Store<fromAdmin.State>
+    private store: Store<fromAdmin.State>,
+    private snackBar: MatSnackBar
   ) {}
 }

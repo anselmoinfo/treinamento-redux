@@ -13,6 +13,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const matModules = [
   MatMenuModule,
@@ -28,6 +29,7 @@ const matModules = [
   MatGridListModule,
   MatFormFieldModule,
   MatSelectModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({

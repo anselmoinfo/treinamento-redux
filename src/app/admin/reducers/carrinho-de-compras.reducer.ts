@@ -86,6 +86,10 @@ function calculaCarrinho(
 
   const subTotal = itens.reduce((sum, current) => sum + current.subtotal, 0);
 
+  if (subTotal > 1600) {
+    throw new Error('Erro top');
+  }
+
   let desconto = 0;
   let total = 0;
   let percentualDesconto = 0;
