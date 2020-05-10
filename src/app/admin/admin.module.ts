@@ -9,6 +9,7 @@ import { MaterialModule } from '../material';
 import { VitrineModule } from './modules';
 import { CarrinhoDeComprasModule } from './modules/carrinho-de-compras/carrinho-de-compras.module';
 import { HomeModule } from './modules/home/home.module';
+import { CadastroDeProdutosModule } from './modules/cadastro-de-produtos/cadastro-de-produtos.module';
 
 @NgModule({
   declarations: [],
@@ -21,6 +22,7 @@ import { HomeModule } from './modules/home/home.module';
     VitrineModule,
     CarrinhoDeComprasModule,
     HomeModule,
+    CadastroDeProdutosModule,
   ],
 })
 export class AdminModule {}

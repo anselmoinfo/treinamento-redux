@@ -16,6 +16,11 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./modules').then((m) => m.CarrinhoDeComprasModule),
   },
+  {
+    path: 'produtos',
+    loadChildren: () =>
+      import('./modules').then((m) => m.CadastroDeProdutosModule),
+  },
 ];
 
 @NgModule({
