@@ -1,0 +1,53 @@
+.vitrine-img {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  max-height: 150px;
+  max-width: 200px;
+}
+
+.vitrine-content-img {
+  width: 200px;
+  height: 150px;
+}
+
+.vitrine-card {
+  max-width: 200px;
+  margin: 15px;
+  float: left;
+}
+
+.vitrine-card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #3f51b5;
+}
+
+mat-menu-panel {
+  min-width: 58px;
+  max-width: 280px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: calc(100vh - 48px);
+  border-radius: 4px;
+  outline: 0;
+  min-height: 64px;
+}
+
+.mat-menu-content {
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 0px;
+}
+
+mat-form-field {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: 60px;
+}

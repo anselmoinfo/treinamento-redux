@@ -11,6 +11,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 const matModules = [
   MatMenuModule,
@@ -24,6 +26,8 @@ const matModules = [
   MatSlideToggleModule,
   MatBadgeModule,
   MatGridListModule,
+  MatFormFieldModule,
+  MatSelectModule,
 ];
 
 @NgModule({

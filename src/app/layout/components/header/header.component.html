@@ -11,19 +11,15 @@
   <div>
     <button
       mat-raised-button
-      matBadge="8"
+      matBadge="{{ qtdProdutosCarrinho$ | async }}"
       color="primary"
       matBadgePosition="before"
       matBadgeColor="accent"
-      [matMenuTriggerFor]="beforeMenu"
+      routerLink="/carrinho"
     >
       <span class="material-icons">
         shopping_cart
       </span>
     </button>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item>Item 1 eita poxa</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
   </div>
 </mat-toolbar>

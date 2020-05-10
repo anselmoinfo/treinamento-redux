@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CarrinhoDeComprasComponent } from './carrinho-de-compras.component';
+import { ItemProdutoComponent } from './item-produto.component';
 
-describe('CarrinhoDeComprasComponent', () => {
-  let component: CarrinhoDeComprasComponent;
-  let fixture: ComponentFixture<CarrinhoDeComprasComponent>;
+describe('ItemProdutoComponent', () => {
+  let component: ItemProdutoComponent;
+  let fixture: ComponentFixture<ItemProdutoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarrinhoDeComprasComponent ]
+      declarations: [ ItemProdutoComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CarrinhoDeComprasComponent);
+    fixture = TestBed.createComponent(ItemProdutoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

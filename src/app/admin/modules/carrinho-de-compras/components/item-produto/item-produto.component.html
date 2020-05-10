@@ -1,0 +1,35 @@
+<mat-list-item>
+  <div class="item">
+    <div class="float-left img">
+      <img src="{{ item.produto.img }}" class="produto-img" />
+    </div>
+    <div class="float-left descricao">{{ item.produto.nome }}</div>
+    <div class="float-left qtd">
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        (click)="altera(-1)"
+      >
+        <mat-icon>{{ item.qtd > 1 ? "remove" : "delete" }}</mat-icon>
+      </button>
+      {{ item.qtd }}
+      <button
+        [disabled]="item.qtd >= item.produto.qtd"
+        mat-icon-button
+        color="primary"
+        aria-label="Example icon button with a home icon"
+        (click)="altera(1)"
+      >
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <div class="float-left preco">
+      {{ item.produto.preco | currency: "BRL" }}
+    </div>
+    <div class="float-left preco">
+      {{ item.subtotal | currency: "BRL" }}
+    </div>
+  </div>
+</mat-list-item>
+<mat-divider></mat-divider>

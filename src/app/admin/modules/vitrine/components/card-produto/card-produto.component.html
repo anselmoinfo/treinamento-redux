@@ -1,0 +1,24 @@
+<mat-card class="vitrine-card">
+  <mat-card-header>
+    <mat-card-title>{{ produto.nome }}</mat-card-title>
+  </mat-card-header>
+  <div class="vitrine-content-img">
+    <img src="{{ produto.img }}" class="vitrine-img" />
+  </div>
+  <mat-card-content class="vitrine-card-content">
+    <div>{{ produto.preco | currency: "BRL" }}</div>
+    <div>
+      <button mat-mini-fab color="warn" [disabled]="jaAdicionado">
+        <mat-icon
+          class="add-course-btn"
+          matTooltip="Adicionar ao carrinho"
+          (click)="add()"
+        >
+          <span class="material-icons">
+            add_shopping_cart
+          </span></mat-icon
+        >
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>

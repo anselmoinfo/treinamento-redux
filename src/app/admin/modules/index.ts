@@ -1,3 +1,3 @@
-export * from './carrinho-de-compras/carrinho-de-compras.component';
-export * from './home/home.component';
-export * from './vitrine/vitrine.component';
+export * from './home/home.module';
+export * from './vitrine/vitrine.module';
+export * from './carrinho-de-compras/carrinho-de-compras.module';

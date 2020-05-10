@@ -1,0 +1,12 @@
+<mat-list *ngIf="!(carrinhoEstaVazio$ | async)">
+  <app-item-produto
+    *ngFor="let item of (carrinhoDeCompras$ | async).itens"
+    [item]="item"
+    (alterar)="alterar($event)"
+  >
+  </app-item-produto>
+  <app-totalizador
+    [carrinhoDeCompras]="carrinhoDeCompras$ | async"
+  ></app-totalizador>
+  <app-acoes (concluirCompra)="concluirCompra()"></app-acoes>
+</mat-list>

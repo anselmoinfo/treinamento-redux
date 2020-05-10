@@ -1,3 +1,4 @@
 import * as ProdutosActions from './produtos.actions';
+import * as CarrinhoDeComprasActions from './carrinho-de-compras.actions';
 
-export { ProdutosActions };
+export { CarrinhoDeComprasActions, ProdutosActions };

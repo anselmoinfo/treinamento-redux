@@ -1,0 +1,33 @@
+<mat-list-item>
+  <div class="totalizador">
+    <div class="espaco"></div>
+    <div class="descricao">
+      Subtotal
+    </div>
+    <div class="valor">
+      {{ carrinhoDeCompras.subTotal | currency: "BRL" }}
+    </div>
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="totalizador">
+    <div class="espaco"></div>
+    <div class="descricao">
+      Desconto
+    </div>
+    <div class="valor">
+      {{ carrinhoDeCompras.desconto | currency: "BRL" }}
+    </div>
+  </div>
+</mat-list-item>
+<mat-list-item>
+  <div class="totalizador">
+    <div class="espaco"></div>
+    <div class="descricao">
+      Total
+    </div>
+    <div class="valor">
+      {{ carrinhoDeCompras.total | currency: "BRL" }}
+    </div>
+  </div>
+</mat-list-item>
