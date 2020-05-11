@@ -9,8 +9,19 @@ import { Produto } from 'src/app/admin/models';
 export class TabelaProdutosComponent implements OnInit {
   @Input() produtos: Produto[];
   @Output() editar = new EventEmitter<Produto>();
+  @Output() deletar = new EventEmitter<Produto>();
+
+  ordemColunas = ['img', 'nome', 'preco', 'qtd', 'acoes'];
 
   constructor() {}
+
+  edita(produto: Produto) {
+    this.editar.emit(produto);
+  }
+
+  deleta(produto: Produto) {
+    this.deletar.emit(produto);
+  }
 
   ngOnInit(): void {}
 }

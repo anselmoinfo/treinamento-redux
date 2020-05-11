@@ -31,7 +31,7 @@ export class ProdutosService {
 
   editaProduto(produto: Produto): Observable<Produto> {
     return this.http
-      .put<Produto>(`${environment.APIUrl}/produtos`, produto)
+      .put<Produto>(`${environment.APIUrl}/produtos/${produto.id}`, produto)
       .pipe(
         catchError((e) => {
           throw new Error(e.message);

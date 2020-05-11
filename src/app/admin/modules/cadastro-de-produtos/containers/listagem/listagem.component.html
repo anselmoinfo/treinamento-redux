@@ -1,6 +1,7 @@
-<div class="acoes">
-  <button mat-mini-fab color="primary" aria-label="">
-    <mat-icon>add</mat-icon>
-  </button>
-</div>
-<app-tabela-produtos [produtos]="produtos$ | async"> </app-tabela-produtos>
+<app-acoes (adicionar)="openModal()"></app-acoes>
+<app-tabela-produtos
+  [produtos]="produtos$ | async"
+  (editar)="openModal($event)"
+  (deletar)="deletar($event)"
+>
+</app-tabela-produtos>

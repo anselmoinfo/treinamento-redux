@@ -10,6 +10,7 @@ import { VitrineModule } from './modules';
 import { CarrinhoDeComprasModule } from './modules/carrinho-de-compras/carrinho-de-compras.module';
 import { HomeModule } from './modules/home/home.module';
 import { CadastroDeProdutosModule } from './modules/cadastro-de-produtos/cadastro-de-produtos.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
@@ -23,6 +24,7 @@ import { CadastroDeProdutosModule } from './modules/cadastro-de-produtos/cadastr
     CarrinhoDeComprasModule,
     HomeModule,
     CadastroDeProdutosModule,
+    FormsModule,
   ],
 })
 export class AdminModule {}

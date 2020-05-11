@@ -3,10 +3,26 @@ import { CommonModule } from '@angular/common';
 import { ListagemComponent } from './containers';
 import { CadastroDeProdutosRoutingModule } from './cadastro-de-produtos-routing.module';
 import { MaterialModule } from 'src/app/material';
-import { TabelaProdutosComponent } from './components';
+import {
+  AcoesComponent,
+  TabelaProdutosComponent,
+  ModalCadastroProdutoComponent,
+} from './components';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [ListagemComponent, TabelaProdutosComponent],
-  imports: [CommonModule, CadastroDeProdutosRoutingModule, MaterialModule],
+  declarations: [
+    ListagemComponent,
+    TabelaProdutosComponent,
+    ModalCadastroProdutoComponent,
+    AcoesComponent,
+  ],
+  imports: [
+    CommonModule,
+    CadastroDeProdutosRoutingModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class CadastroDeProdutosModule {}

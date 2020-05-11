@@ -27,19 +27,24 @@
       <button
         mat-icon-button
         color="primary"
-        aria-label="Example icon button with a home icon"
+        aria-label=""
+        matTooltip="Editar"
+        (click)="edita(element)"
       >
         <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label=""
+        matTooltip="Deletar"
+        (click)="deleta(element)"
+      >
+        <mat-icon>delete</mat-icon>
       </button>
     </td>
   </ng-container>
 
-  <tr
-    mat-header-row
-    *matHeaderRowDef="['img', 'nome', 'preco', 'qtd', 'acoes']"
-  ></tr>
-  <tr
-    mat-row
-    *matRowDef="let row; columns: ['img', 'nome', 'preco', 'qtd', 'acoes']"
-  ></tr>
+  <tr mat-header-row *matHeaderRowDef="ordemColunas"></tr>
+  <tr mat-row *matRowDef="let row; columns: ordemColunas"></tr>
 </table>

@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>{{ titulo }}</h1>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Nome</mat-label>
+      <input formControlName="nome" matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Endereço da imagem</mat-label>
+      <input formControlName="img" matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Preço</mat-label>
+      <input formControlName="preco" matInput />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Quantidade</mat-label>
+      <input formControlName="qtd" matInput />
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <button mat-button type="submit">Salvar</button>
+  </div>
+</form>
