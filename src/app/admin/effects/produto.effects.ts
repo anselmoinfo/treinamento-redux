@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 import { ProdutosActions } from '../actions';
 import { ProdutosService } from '../services';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class ProdutoEffects {
@@ -23,7 +24,11 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.listarFailure),
-        tap((error) => alert(error.error))
+        tap((error) =>
+          this.snackBar.open(error.error, 'OK', {
+            duration: 3000,
+          })
+        )
       ),
     { dispatch: false }
   );
@@ -45,6 +50,11 @@ export class ProdutoEffects {
   cadastrarSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProdutosActions.cadastrarSuccess),
+      tap(() =>
+        this.snackBar.open('Produto Cadastrado com Sucesso!', 'OK', {
+          duration: 3000,
+        })
+      ),
       map(() => ProdutosActions.listar())
     )
   );
@@ -53,7 +63,11 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.cadastrarFailure),
-        tap((error) => alert(error.error))
+        tap((error) =>
+          this.snackBar.open(error.error, 'OK', {
+            duration: 3000,
+          })
+        )
       ),
     { dispatch: false }
   );
@@ -73,6 +87,11 @@ export class ProdutoEffects {
   editarSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProdutosActions.editarSuccess),
+      tap(() =>
+        this.snackBar.open('Produto Editado com Sucesso!', 'OK', {
+          duration: 3000,
+        })
+      ),
       map(() => ProdutosActions.listar())
     )
   );
@@ -81,7 +100,11 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.editarFailure),
-        tap((error) => alert(error.error))
+        tap((error) =>
+          this.snackBar.open(error.error, 'OK', {
+            duration: 3000,
+          })
+        )
       ),
     { dispatch: false }
   );
@@ -101,6 +124,11 @@ export class ProdutoEffects {
   excluirSuccess$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ProdutosActions.excluirSuccess),
+      tap(() =>
+        this.snackBar.open('Produto Excluído com Sucesso!', 'OK', {
+          duration: 3000,
+        })
+      ),
       map(() => ProdutosActions.listar())
     )
   );
@@ -109,13 +137,18 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.excluirFailure),
-        tap((error) => alert(error.error))
+        tap((error) =>
+          this.snackBar.open(error.error, 'OK', {
+            duration: 3000,
+          })
+        )
       ),
     { dispatch: false }
   );
 
   constructor(
     private actions$: Actions,
-    private produtosService: ProdutosService
+    private produtosService: ProdutosService,
+    private snackBar: MatSnackBar
   ) {}
 }
