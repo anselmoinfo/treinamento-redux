@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as fromAdmin from '../../../../reducers/';
 import { CarrinhoDeComprasActions } from '../../../../actions';
@@ -9,7 +9,7 @@ import { ItemCarrinhoDeCompras } from 'src/app/admin/models';
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],
 })
-export class ListagemComponent implements OnInit {
+export class ListagemComponent {
   carrinhoDeCompras$ = this.store.pipe(
     select(fromAdmin.selectCarrinhoDeCompras)
   );
@@ -17,8 +17,6 @@ export class ListagemComponent implements OnInit {
   carrinhoEstaVazio$ = this.store.pipe(select(fromAdmin.carrinhoEstaVazio));
 
   constructor(private store: Store<fromAdmin.State>) {}
-
-  ngOnInit(): void {}
 
   alterar(itemCarrinhoDecompras: ItemCarrinhoDeCompras) {
     this.store.dispatch(

@@ -6,10 +6,8 @@ import { CarrinhoDeCompras } from 'src/app/admin/models';
   templateUrl: './totalizador.component.html',
   styleUrls: ['./totalizador.component.scss'],
 })
-export class TotalizadorComponent implements OnInit {
+export class TotalizadorComponent {
   @Input() carrinhoDeCompras: CarrinhoDeCompras;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

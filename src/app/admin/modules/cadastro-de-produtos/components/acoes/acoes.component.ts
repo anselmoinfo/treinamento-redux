@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-acoes',
   templateUrl: './acoes.component.html',
   styleUrls: ['./acoes.component.scss'],
 })
-export class AcoesComponent implements OnInit {
+export class AcoesComponent {
   @Output() adicionar = new EventEmitter<boolean>();
 
   constructor() {}
@@ -13,6 +13,4 @@ export class AcoesComponent implements OnInit {
   openModal() {
     this.adicionar.emit(true);
   }
-
-  ngOnInit(): void {}
 }

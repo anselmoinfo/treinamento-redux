@@ -8,7 +8,8 @@
       <button
         mat-icon-button
         color="primary"
-        aria-label="Example icon button with a home icon"
+        aria-label=""
+        matTooltip="{{ item.qtd > 1 ? 'Remover' : 'Excluir' }}"
         (click)="altera(-1)"
       >
         <mat-icon>{{ item.qtd > 1 ? "remove" : "delete" }}</mat-icon>
@@ -18,7 +19,8 @@
         [disabled]="item.qtd >= item.produto.qtd"
         mat-icon-button
         color="primary"
-        aria-label="Example icon button with a home icon"
+        aria-label=""
+        matTooltip="Adicionar"
         (click)="altera(1)"
       >
         <mat-icon>add</mat-icon>

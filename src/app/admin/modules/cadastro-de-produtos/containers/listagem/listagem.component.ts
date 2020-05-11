@@ -21,7 +21,8 @@ export class ListagemComponent implements OnInit {
 
   openModal(data?: Produto): void {
     const dialogRef = this.dialog.open(ModalCadastroProdutoComponent, {
-      width: '250px',
+      disableClose: true,
+      width: '400px',
       data,
     });
 
@@ -34,8 +35,8 @@ export class ListagemComponent implements OnInit {
     });
   }
 
-  deletar(produto: Produto) {
-    this.store.dispatch(ProdutosActions.deletar({ id: produto.id }));
+  excluir(produto: Produto) {
+    this.store.dispatch(ProdutosActions.excluir({ id: produto.id }));
   }
 
   ngOnInit(): void {

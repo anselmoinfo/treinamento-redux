@@ -86,29 +86,29 @@ export class ProdutoEffects {
     { dispatch: false }
   );
 
-  deletar$ = createEffect(() =>
+  excluir$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProdutosActions.deletar),
+      ofType(ProdutosActions.excluir),
       exhaustMap(({ id }) =>
-        this.produtosService.deletaProduto(id).pipe(
-          map((retorno) => ProdutosActions.deletarSuccess()),
-          catchError((error) => of(ProdutosActions.deletarFailure({ error })))
+        this.produtosService.excluiProduto(id).pipe(
+          map((retorno) => ProdutosActions.excluirSuccess()),
+          catchError((error) => of(ProdutosActions.excluirFailure({ error })))
         )
       )
     )
   );
 
-  deletarSuccess$ = createEffect(() =>
+  excluirSuccess$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProdutosActions.deletarSuccess),
+      ofType(ProdutosActions.excluirSuccess),
       map(() => ProdutosActions.listar())
     )
   );
 
-  deletarFailure$ = createEffect(
+  excluirFailure$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(ProdutosActions.deletarFailure),
+        ofType(ProdutosActions.excluirFailure),
         tap((error) => alert(error.error))
       ),
     { dispatch: false }

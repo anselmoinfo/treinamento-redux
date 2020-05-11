@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from 'src/app/admin/models';
 
 @Component({
@@ -6,7 +6,7 @@ import { Produto } from 'src/app/admin/models';
   templateUrl: './card-produto.component.html',
   styleUrls: ['./card-produto.component.scss'],
 })
-export class CardProdutoComponent implements OnInit {
+export class CardProdutoComponent {
   @Input() produto: Produto;
   @Input() jaAdicionado: boolean;
   @Output() adicionar = new EventEmitter<Produto>();
@@ -18,6 +18,4 @@ export class CardProdutoComponent implements OnInit {
       this.adicionar.emit(this.produto);
     }
   }
-
-  ngOnInit(): void {}
 }

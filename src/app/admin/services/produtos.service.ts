@@ -39,7 +39,7 @@ export class ProdutosService {
       );
   }
 
-  deletaProduto(id: number): Observable<{}> {
+  excluiProduto(id: number): Observable<{}> {
     return this.http
       .delete<Produto>(`${environment.APIUrl}/produtos/${id}`)
       .pipe(

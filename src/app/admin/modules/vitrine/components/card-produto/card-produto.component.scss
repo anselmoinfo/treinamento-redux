@@ -26,6 +26,14 @@
   color: #3f51b5;
 }
 
+.mat-card-header .mat-card-title {
+  margin-bottom: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 178px;
+  white-space: nowrap;
+}
+
 mat-menu-panel {
   min-width: 58px;
   max-width: 280px;

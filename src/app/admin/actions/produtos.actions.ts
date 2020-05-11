@@ -43,14 +43,14 @@ export const editarFailure = createAction(
   props<{ error: string }>()
 );
 
-export const deletar = createAction(
-  '[Produtos] Deletar',
+export const excluir = createAction(
+  '[Produtos] Excluir',
   props<{ id: number }>()
 );
 
-export const deletarSuccess = createAction('[Produtos] Deletar Success');
+export const excluirSuccess = createAction('[Produtos] Excluir Success');
 
-export const deletarFailure = createAction(
-  '[Produtos] Deletar Failure',
+export const excluirFailure = createAction(
+  '[Produtos] Excluir Failure',
   props<{ error: string }>()
 );

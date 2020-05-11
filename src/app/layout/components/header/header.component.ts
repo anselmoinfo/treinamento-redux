@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromAdmin from '../../../admin/reducers';
 
@@ -7,12 +7,10 @@ import * as fromAdmin from '../../../admin/reducers';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   qtdProdutosCarrinho$ = this.store.pipe(
     select(fromAdmin.selectQtdProdutosCarrinho)
   );
 
   constructor(private store: Store<fromAdmin.State>) {}
-
-  ngOnInit(): void {}
 }

@@ -10,3 +10,6 @@
   ></app-totalizador>
   <app-acoes (concluirCompra)="concluirCompra()"></app-acoes>
 </mat-list>
+<ng-container *ngIf="carrinhoEstaVazio$ | async">
+  Seu carrinho de compras está vazio!
+</ng-container>

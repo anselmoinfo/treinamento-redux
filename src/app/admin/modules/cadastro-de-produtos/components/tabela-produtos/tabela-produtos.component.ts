@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Produto } from 'src/app/admin/models';
 
 @Component({
@@ -6,10 +6,10 @@ import { Produto } from 'src/app/admin/models';
   templateUrl: './tabela-produtos.component.html',
   styleUrls: ['./tabela-produtos.component.scss'],
 })
-export class TabelaProdutosComponent implements OnInit {
+export class TabelaProdutosComponent {
   @Input() produtos: Produto[];
   @Output() editar = new EventEmitter<Produto>();
-  @Output() deletar = new EventEmitter<Produto>();
+  @Output() excluir = new EventEmitter<Produto>();
 
   ordemColunas = ['img', 'nome', 'preco', 'qtd', 'acoes'];
 
@@ -19,9 +19,7 @@ export class TabelaProdutosComponent implements OnInit {
     this.editar.emit(produto);
   }
 
-  deleta(produto: Produto) {
-    this.deletar.emit(produto);
+  exclui(produto: Produto) {
+    this.excluir.emit(produto);
   }
-
-  ngOnInit(): void {}
 }

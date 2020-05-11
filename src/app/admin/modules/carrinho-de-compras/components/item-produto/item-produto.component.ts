@@ -6,13 +6,11 @@ import { ItemCarrinhoDeCompras } from 'src/app/admin/models';
   templateUrl: './item-produto.component.html',
   styleUrls: ['./item-produto.component.scss'],
 })
-export class ItemProdutoComponent implements OnInit {
+export class ItemProdutoComponent {
   @Input() item: ItemCarrinhoDeCompras;
   @Output() alterar = new EventEmitter<ItemCarrinhoDeCompras>();
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   altera(qtd: number) {
     this.alterar.emit({
