@@ -1,6 +1,5 @@
 <app-card-produto
   *ngFor="let produto of produtos$ | async"
   [produto]="produto"
-  [jaAdicionado]="produtoJaAdicionado$(produto) | async"
   (adicionar)="adicionar($event)"
 ></app-card-produto>

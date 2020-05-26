@@ -1,29 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromAdmin from '../../../../reducers/';
 import { ProdutosActions, CarrinhoDeComprasActions } from '../../../../actions';
 import { Produto } from 'src/app/admin/models';
-import { state } from '@angular/animations';
-import { Observable } from 'rxjs';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-listagem',
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],
 })
 export class ListagemComponent implements OnInit {
-  produtos$ = this.store.pipe(select(fromAdmin.selectGetProdutos));
-
   constructor(private store: Store<fromAdmin.State>) {}
+  produtos$ = this.store.pipe(select(fromAdmin.selectProdutosVitrine));
 
   ngOnInit(): void {
     this.store.dispatch(ProdutosActions.listar());
-  }
-
-  produtoJaAdicionado$(produto: Produto): Observable<boolean> {
-    return this.store.pipe(
-      select(fromAdmin.selectProdutoJaAdicionado, { id: produto.id })
-    );
   }
 
   adicionar(produto: Produto) {

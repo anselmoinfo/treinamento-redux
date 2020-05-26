@@ -9,6 +9,11 @@ import { LayoutModule } from './layout/layout.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import {
+  PushPipe,
+  LetDirective,
+  ReactiveComponentModule,
+} from '@ngrx/component';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ROOT_REDUCERS, metaReducers } from './reducers';
@@ -40,6 +45,7 @@ import { MaterialModule } from './material';
       logOnly: environment.production,
     }),
     EffectsModule.forRoot(),
+    ReactiveComponentModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

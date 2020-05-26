@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import * as fromAdmin from '../../../../reducers/';
 import { CarrinhoDeComprasActions } from '../../../../actions';
 import { ItemCarrinhoDeCompras } from 'src/app/admin/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-listagem',
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],

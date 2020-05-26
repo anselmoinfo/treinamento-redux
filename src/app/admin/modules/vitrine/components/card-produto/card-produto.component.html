@@ -10,11 +10,19 @@
   <mat-card-content class="vitrine-card-content">
     <div>{{ produto.preco | currency: "BRL" }}</div>
     <div>
-      <button mat-mini-fab color="warn" [disabled]="jaAdicionado">
+      <button
+        mat-mini-fab
+        color="warn"
+        [disabled]="produto.adicionadoAoCarrinho"
+        (click)="add()"
+      >
         <mat-icon
           class="add-course-btn"
-          matTooltip="Adicionar ao carrinho"
-          (click)="add()"
+          matTooltip="{{
+            produto.adicionadoAoCarrinho
+              ? 'Já adicionado'
+              : 'Adicionar ao carrinho'
+          }}"
         >
           <span class="material-icons">
             add_shopping_cart

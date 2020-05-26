@@ -4,9 +4,15 @@ import { CardProdutoComponent } from './components';
 import { ListagemComponent } from './containers';
 import { MaterialModule } from 'src/app/material';
 import { VitrineRoutingModule } from './vitrine-routing.module';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [CardProdutoComponent, ListagemComponent],
-  imports: [CommonModule, MaterialModule, VitrineRoutingModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    VitrineRoutingModule,
+    ReactiveComponentModule,
+  ],
 })
 export class VitrineModule {}

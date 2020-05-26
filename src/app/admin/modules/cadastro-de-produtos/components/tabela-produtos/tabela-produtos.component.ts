@@ -1,7 +1,14 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { Produto } from 'src/app/admin/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-tabela-produtos',
   templateUrl: './tabela-produtos.component.html',
   styleUrls: ['./tabela-produtos.component.scss'],

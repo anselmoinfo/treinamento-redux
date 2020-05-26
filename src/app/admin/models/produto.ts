@@ -4,4 +4,5 @@ export interface Produto {
   preco: number;
   img: string;
   qtd: number;
+  adicionadoAoCarrinho: boolean;
 }

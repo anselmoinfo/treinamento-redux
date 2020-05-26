@@ -1,9 +1,15 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Inject,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Produto } from 'src/app/admin/models';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-modal-cadastro-produto',
   templateUrl: './modal-cadastro-produto.component.html',
   styleUrls: ['./modal-cadastro-produto.component.scss'],

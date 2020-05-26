@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromAdmin from '../../../../reducers/';
 import { ProdutosActions, CarrinhoDeComprasActions } from '../../../../actions';
@@ -7,6 +7,7 @@ import { ModalCadastroProdutoComponent } from '../../components';
 import { Produto } from 'src/app/admin/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-listagem',
   templateUrl: './listagem.component.html',
   styleUrls: ['./listagem.component.scss'],

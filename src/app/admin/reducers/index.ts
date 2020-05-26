@@ -51,6 +51,19 @@ export const selectCarrinhoDeCompras = createSelector(
   fromCarrinhoDeCompras.getCarrinhoDeCompras
 );
 
+export const selectProdutosVitrine = createSelector(
+  selectGetProdutos,
+  selectCarrinhoDeCompras,
+  (produtos, carrinho) => {
+    return produtos.map((produto) => ({
+      ...produto,
+      adicionadoAoCarrinho: carrinho.itens.some(
+        (item) => item.produto.id === produto.id
+      ),
+    }));
+  }
+);
+
 export const selectQtdProdutosCarrinho = createSelector(
   selectCarrinhoDeCompras,
   (carrinhoDeCompras) => {
@@ -58,13 +71,6 @@ export const selectQtdProdutosCarrinho = createSelector(
       (sum, current) => sum + current.qtd,
       0
     );
-  }
-);
-
-export const selectProdutoJaAdicionado = createSelector(
-  selectCarrinhoDeCompras,
-  (carrinho, props) => {
-    return carrinho.itens.some((item) => item.produto.id === props.id);
   }
 );
 

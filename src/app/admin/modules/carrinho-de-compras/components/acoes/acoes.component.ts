@@ -1,6 +1,12 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-acoes',
   templateUrl: './acoes.component.html',
   styleUrls: ['./acoes.component.scss'],

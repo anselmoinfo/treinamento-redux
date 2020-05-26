@@ -1,7 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { ItemCarrinhoDeCompras } from 'src/app/admin/models';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-item-produto',
   templateUrl: './item-produto.component.html',
   styleUrls: ['./item-produto.component.scss'],

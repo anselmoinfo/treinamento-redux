@@ -11,6 +11,7 @@ import { CarrinhoDeComprasModule } from './modules/carrinho-de-compras/carrinho-
 import { HomeModule } from './modules/home/home.module';
 import { CadastroDeProdutosModule } from './modules/cadastro-de-produtos/cadastro-de-produtos.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveComponentModule } from '@ngrx/component';
 
 @NgModule({
   declarations: [],
@@ -25,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     CadastroDeProdutosModule,
     FormsModule,
+    ReactiveComponentModule,
   ],
 })
 export class AdminModule {}
