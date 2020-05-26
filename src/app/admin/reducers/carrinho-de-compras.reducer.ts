@@ -29,10 +29,7 @@ export const reducer = createReducer(
       };
       return {
         ...state,
-        carrinhoDeCompras: calculaCarrinho({
-          ...state.carrinhoDeCompras,
-          itens: state.carrinhoDeCompras.itens.concat(itemCarrinhoDecompras),
-        }),
+        carrinhoDeCompras: calculaCarrinho(carrinhoDeCompras),
       };
     }
   ),

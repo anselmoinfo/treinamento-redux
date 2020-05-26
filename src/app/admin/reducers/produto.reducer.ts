@@ -5,11 +5,11 @@ import { ProdutosActions } from '../actions';
 export const produtoFeatureKey = 'produto';
 
 export interface State {
-  produtos: Produto[] | null;
+  produtos: Produto[];
 }
 
 export const initialState: State = {
-  produtos: null,
+  produtos: [],
 };
 
 export const reducer = createReducer(

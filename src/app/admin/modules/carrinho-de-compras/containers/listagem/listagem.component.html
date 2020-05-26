@@ -1,15 +1,16 @@
-<mat-list *ngIf="!(carrinhoEstaVazio$ | async)">
-  <app-item-produto
-    *ngFor="let item of (carrinhoDeCompras$ | async).itens"
-    [item]="item"
-    (alterar)="alterar($event)"
-  >
-  </app-item-produto>
-  <app-totalizador
-    [carrinhoDeCompras]="carrinhoDeCompras$ | async"
-  ></app-totalizador>
+<mat-list *ngIf="!(carrinhoEstaVazio$ | async); else carrinhoEstaVazioTemplate">
+  <ng-container *ngIf="carrinhoDeCompras$ | async as carrinhoDeCompras">
+    <app-item-produto
+      *ngFor="let item of carrinhoDeCompras.itens"
+      [item]="item"
+      (alterar)="alterar($event)"
+    >
+    </app-item-produto>
+    <app-totalizador [carrinhoDeCompras]="carrinhoDeCompras"></app-totalizador>
+  </ng-container>
+
   <app-acoes (concluirCompra)="concluirCompra()"></app-acoes>
 </mat-list>
-<ng-container *ngIf="carrinhoEstaVazio$ | async">
+<ng-template #carrinhoEstaVazioTemplate>
   Seu carrinho de compras está vazio!
-</ng-container>
+</ng-template>

@@ -22,7 +22,7 @@ export class ListagemComponent implements OnInit {
 
   produtoJaAdicionado$(produto: Produto): Observable<boolean> {
     return this.store.pipe(
-      select(fromAdmin.produtoJaAdicionado, { id: produto.id })
+      select(fromAdmin.selectProdutoJaAdicionado, { id: produto.id })
     );
   }
 

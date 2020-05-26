@@ -61,16 +61,14 @@ export const selectQtdProdutosCarrinho = createSelector(
   }
 );
 
-export const produtoJaAdicionado = createSelector(
+export const selectProdutoJaAdicionado = createSelector(
   selectCarrinhoDeCompras,
   (carrinho, props) => {
-    return (
-      carrinho.itens.filter((item) => item.produto.id === props.id).length > 0
-    );
+    return carrinho.itens.some((item) => item.produto.id === props.id);
   }
 );
 
-export const carrinhoEstaVazio = createSelector(
+export const selectCarrinhoEstaVazio = createSelector(
   selectCarrinhoDeCompras,
   (carrinho) => {
     return carrinho.itens.length === 0;

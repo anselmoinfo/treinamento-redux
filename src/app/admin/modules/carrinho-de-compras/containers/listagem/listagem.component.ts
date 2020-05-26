@@ -14,7 +14,9 @@ export class ListagemComponent {
     select(fromAdmin.selectCarrinhoDeCompras)
   );
 
-  carrinhoEstaVazio$ = this.store.pipe(select(fromAdmin.carrinhoEstaVazio));
+  carrinhoEstaVazio$ = this.store.pipe(
+    select(fromAdmin.selectCarrinhoEstaVazio)
+  );
 
   constructor(private store: Store<fromAdmin.State>) {}
 
