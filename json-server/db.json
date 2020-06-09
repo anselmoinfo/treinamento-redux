@@ -27,6 +27,13 @@
       "preco": "120",
       "qtd": "3",
       "id": 6
+    },
+    {
+      "nome": "Webcam Logitech",
+      "img": "https://i.zst.com.br/images/webcam-logitech-hd-pro-15-mp-filma-em-full-hd-c920-photo7572977-12-27-10.jpg",
+      "preco": "460",
+      "qtd": 5,
+      "id": 7
     }
   ],
   "compras": [
@@ -239,6 +246,38 @@
       "desconto": 61.389,
       "total": 1166.391,
       "id": 7
+    },
+    {
+      "itens": [
+        {
+          "produto": {
+            "nome": "Produto Teste! topado demais para caber aqui",
+            "img": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1189275827",
+            "preco": 126.26,
+            "qtd": 10,
+            "id": 1,
+            "adicionadoAoCarrinho": false
+          },
+          "qtd": 1,
+          "subtotal": 126.26
+        },
+        {
+          "produto": {
+            "nome": "S7 Edge",
+            "img": "https://i.zst.com.br/images/smartphone-samsung-galaxy-s7-edge-sm-g935f-32gb-12-0-mp-android-6-0-marshmallow--photo88811698-12-3-38.jpg",
+            "preco": "120",
+            "qtd": "11",
+            "id": 4,
+            "adicionadoAoCarrinho": false
+          },
+          "qtd": 1,
+          "subtotal": 120
+        }
+      ],
+      "subTotal": 246.26,
+      "desconto": 0,
+      "total": 246.26,
+      "id": 8
     }
   ]
 }

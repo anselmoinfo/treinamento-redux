@@ -31,23 +31,23 @@ export const selectAdminState = createFeatureSelector<State, AdminState>(
   adminFeatureKey
 );
 
-export const selectProdutoEntitiesState = createSelector(
+export const selectProdutoState = createSelector(
   selectAdminState,
   (state) => state.produto
 );
 
 export const selectGetProdutos = createSelector(
-  selectProdutoEntitiesState,
+  selectProdutoState,
   fromProduto.getProdutos
 );
 
-export const selectCarrinhoDeCompraEntitiesState = createSelector(
+export const selectCarrinhoDeCompraState = createSelector(
   selectAdminState,
   (state) => state.carrinhoDeCompras
 );
 
 export const selectCarrinhoDeCompras = createSelector(
-  selectCarrinhoDeCompraEntitiesState,
+  selectCarrinhoDeCompraState,
   fromCarrinhoDeCompras.getCarrinhoDeCompras
 );
 

@@ -24,8 +24,8 @@ export class ProdutoEffects {
     () =>
       this.actions$.pipe(
         ofType(ProdutosActions.listarFailure),
-        tap((error) =>
-          this.snackBar.open(error.error, 'OK', {
+        tap((msg) =>
+          this.snackBar.open(msg.error, 'OK', {
             duration: 3000,
           })
         )

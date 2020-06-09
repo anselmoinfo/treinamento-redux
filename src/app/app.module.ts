@@ -31,6 +31,7 @@ import { MaterialModule } from './material';
     MaterialModule,
     AdminModule,
     LayoutModule,
+
     StoreModule.forRoot(ROOT_REDUCERS, {
       metaReducers,
       runtimeChecks: {

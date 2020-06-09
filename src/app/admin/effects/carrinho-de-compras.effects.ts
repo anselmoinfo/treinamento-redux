@@ -23,7 +23,7 @@ export class CarrinhoDeComprasEffects {
       withLatestFrom(
         this.store.pipe(select(fromAdmin.selectCarrinhoDeCompras))
       ),
-      flatMap(([action, carrinhoDeCompras]) =>
+      exhaustMap(([action, carrinhoDeCompras]) =>
         this.carrinhoDeComprasService.concluirCompra(carrinhoDeCompras).pipe(
           map(() => CarrinhoDeComprasActions.concluirCompraSuccess()),
           catchError((error) =>
