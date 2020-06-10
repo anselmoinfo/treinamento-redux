@@ -1,6 +1,8 @@
 {
   "name": "treinamento-redux",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Projeto de uma Loja Virtual simples demonstrando a aplicação do Redux utilizando o NgRx",
+  "author": "Anselmo Rodrigues Santos Junior <anselmo.info@gmail.com>",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
